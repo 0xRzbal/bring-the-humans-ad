@@ -66,8 +66,29 @@
   .btn:hover { transform: translateY(-2px); }
   .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 24px -8px rgba(188,12,124,.55); }
   .btn-primary:hover { box-shadow: 0 14px 30px -8px rgba(188,12,124,.6); }
-  .btn-secondary { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip {
+    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 999px; padding: 8px 14px;
+    font-size: 13px; font-weight: 600; color: var(--ink);
+  }
+  .chip svg { color: var(--accent); flex-shrink: 0; }
+
+  /* ---------- Secondary hero link ---------- */
+  .hero-link { margin-top: 24px; font-size: 14px; }
+  .hero-link a {
+    font-weight: 600; color: var(--muted);
+    border-bottom: 1px dashed currentColor; padding-bottom: 1px;
+    transition: color .12s ease;
+  }
+  .hero-link a:hover { color: var(--accent); }
 
   /* ---------- Invite pass ---------- */
   .pass { max-width: 480px; margin: 28px auto 0; }
@@ -79,10 +100,17 @@
   .pass-head { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; opacity: .85; }
   .pass-head svg { flex-shrink: 0; }
   .pass-label { margin-top: 16px; font-size: 13px; opacity: .7; letter-spacing: .02em; }
+  .pass-code-row { display: flex; align-items: center; margin-top: 4px; }
   .pass-code {
     font-size: clamp(30px, 5vw, 40px); font-weight: 850; letter-spacing: .02em;
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    margin-top: 4px;
+  }
+  .copy-hint {
+    display: inline-block; margin-left: 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: rgba(255,255,255,.85);
+    border: 1px dashed rgba(255,255,255,.5);
+    border-radius: 999px; padding: 4px 10px; cursor: default;
   }
   .pass-row { display: flex; gap: 10px; align-items: center; margin-top: 18px; }
   .pass-link {
@@ -194,9 +222,37 @@
             </svg>
             Claim your invite
           </a>
-          <a class="btn btn-secondary" href="#how">How it works</a>
         </div>
         <p class="hero-note">Free to join · Rewards in USDC · Referral code: <strong>6j7nzazy</strong></p>
+
+        <div class="trust-strip">
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Agent-graded scoring
+          </span>
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            USDC payouts
+          </span>
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            48h bounties
+          </span>
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            100+ competitions
+          </span>
+        </div>
+
+        <p class="hero-link"><a href="https://make.fun/learn">See how it works</a></p>
 
         <div class="pass">
           <div class="pass-card">
@@ -208,7 +264,10 @@
               Your invite pass
             </div>
             <div class="pass-label">Share this invite code</div>
-            <div class="pass-code">6j7nzazy</div>
+            <div class="pass-code-row">
+              <span class="pass-code">6j7nzazy</span>
+              <span class="copy-hint">copy</span>
+            </div>
             <div class="pass-row">
               <span class="pass-link" id="inviteLinkText">https://make.fun/r/6j7nzazy</span>
               <button class="copy-btn" id="copyBtn">
